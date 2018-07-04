@@ -1,0 +1,250 @@
+<ion-header>
+  <ion-navbar color="secondary">
+    <ion-title text-center>
+      Quiz App
+    </ion-title>
+  </ion-navbar>
+
+  <ion-toolbar no-border-top>
+    <ion-segment [(ngModel)]="Trivia">
+      <ion-segment-button value="wc">
+        Season Quiz
+      </ion-segment-button>
+      <ion-segment-button value="pc">
+        Animal Quiz
+      </ion-segment-button>
+      <ion-segment-button value="Math">
+        Maths Quiz
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content padding>
+  <div *ngIf= "main==1">
+    <div [ngSwitch]="Trivia">
+      <ion-list *ngSwitchCase="'wc'">
+          <ion-list radio-group [(ngModel)]="wc98">
+              <b>1.</b><u>Which season is July <span></span>?</u> 
+              <ion-item>
+                <ion-label>Autom</ion-label>
+                <ion-radio (click)="_wc98('userAnswers')" value="Autom"></ion-radio>
+              </ion-item>
+            
+              <ion-item>
+                <ion-label>Winter</ion-label>
+                <ion-radio (click)="_wc98('userAnswers')" value="Winter" ></ion-radio>
+              </ion-item>
+      
+              <ion-item>
+                <ion-label>Spring</ion-label>
+                <ion-radio (click)="_wc98('userAnswers')" value="Spring"></ion-radio>
+              </ion-item>
+            </ion-list>
+          
+            <!--===================================-->
+            <ion-list radio-group [(ngModel)]="wc14">
+              <b>2.</b><u>Which season is September <span></span>?</u>
+            <ion-item>
+              <ion-label>Autom</ion-label>
+              <ion-radio (click)="_wc14('userAnswers')" value="Autom"></ion-radio>
+            </ion-item>
+          
+            <ion-item>
+              <ion-label>Winter</ion-label>
+              <ion-radio (click)="_wc14('userAnswers')" value="Winter"></ion-radio>
+            </ion-item>
+          
+            <ion-item>
+              <ion-label>Spring</ion-label>
+              <ion-radio (click)="_wc14('userAnswers')" value="Spring"></ion-radio>
+            </ion-item>
+          </ion-list>
+          <!--================================================================-->
+          <ion-list radio-group [(ngModel)]="wc10">
+            <b>3.</b><u>Which season is April<span></span>?</u>
+          <ion-item>
+            <ion-label>Autom</ion-label>
+            <ion-radio (click)="_wc10('userAnswers')" value="Autom"></ion-radio>
+          </ion-item>
+        
+          <ion-item>
+            <ion-label>Winter</ion-label>
+            <ion-radio (click)="_wc10('userAnswers')" value="Winter"></ion-radio>
+          </ion-item>
+        
+          <ion-item>
+            <ion-label>Spring</ion-label>
+            <ion-radio (click)="_wc10('userAnswers')" value="Spring" ></ion-radio>
+          </ion-item>
+        </ion-list>
+      
+      </ion-list>
+    </div>
+
+
+      
+  <!--=======================================================================
+  ============================================================================-->
+
+  <div [ngSwitch]="Trivia">
+      <ion-list *ngSwitchCase="'pc'">
+
+          <ion-list radio-group [(ngModel)]="pc1">
+              <b>1.</b><u>What is the name of an animal that barks<span></span>?</u>
+              <img src="../../assets/imgs/dog.jpg">
+            <ion-item>
+              <ion-label>lion</ion-label>
+              <ion-radio (click)="_pc1('userAnswers')" value="lion"></ion-radio>
+            </ion-item>
+            
+            <ion-item>
+              <ion-label>dog</ion-label>
+              <ion-radio (click)="_pc1('userAnswers')" value="dog"></ion-radio>
+            </ion-item>
+            
+            <ion-item>
+              <ion-label>cat</ion-label>
+              <ion-radio (click)="_pc1('userAnswers')" value="cat" ></ion-radio>
+            </ion-item>
+            </ion-list>
+          
+            <ion-list radio-group [(ngModel)]="pc2">
+              <b>2.</b><u>What is the name of animal that lives under the sea<span></span>?</u>
+              <img src="../../assets/imgs/fish.jpg">
+            <ion-item>
+              <ion-label>zebra</ion-label>
+              <ion-radio (click)="_pc2('userAnswers')" value="zebra"></ion-radio>
+            </ion-item>
+          
+            <ion-item>
+              <ion-label>chicken</ion-label>
+              <ion-radio (click)="_pc2('userAnswers')" value="chicken"></ion-radio>
+            </ion-item>
+          
+            <ion-item>
+              <ion-label>fish</ion-label>
+              <ion-radio (click)="_pc2('userAnswers')" value="fish" ></ion-radio>
+            </ion-item>
+          </ion-list>
+          
+          <ion-list radio-group [(ngModel)]="pc3">
+            <b>3.</b><u>What is the name of an animal that is popular of eating carrot<span></span>?</u>
+            <img src="../../assets/imgs/rabbit.jpg">
+          <ion-item>
+            <ion-label>snake</ion-label>
+            <ion-radio (click)="_pc3('userAnswers')" value="snake"></ion-radio>
+          </ion-item>
+          
+          <ion-item>
+            <ion-label>rabbit</ion-label>
+            <ion-radio (click)="_pc3('userAnswers')" value="rabbit"></ion-radio>
+          </ion-item>
+          
+          <ion-item>
+            <ion-label>mouse</ion-label>
+            <ion-radio (click)="_pc3('userAnswers')" value="mouse" ></ion-radio>
+          </ion-item>
+          </ion-list>
+          
+      </ion-list>
+  </div>    
+
+  
+<!--=======================================================================
+  ============================================================================-->
+
+  <div [ngSwitch]="Trivia">
+      <ion-list *ngSwitchCase="'Math'">
+
+          <ion-list radio-group [(ngModel)]="m1">
+              <b>1.</b><u>100+10-1= <span><b></b></span>?</u>
+            <ion-item>
+              <ion-label>109</ion-label>
+              <ion-radio (click)="_m1('userAnswers')" value="109"></ion-radio>
+            </ion-item>
+            
+            <ion-item>
+              <ion-label>100</ion-label>
+              <ion-radio (click)="_m1('userAnswers')" value="100"></ion-radio>
+            </ion-item>
+            
+            <ion-item>
+              <ion-label>111</ion-label>
+              <ion-radio (click)="_m1('userAnswers')" value="111" ></ion-radio>
+            </ion-item>
+            </ion-list>
+          
+            <ion-list radio-group [(ngModel)]="m2">
+              <b>2.</b><u>100+100= <span></span>?</u>
+            <ion-item>
+              <ion-label>100</ion-label>
+              <ion-radio (click)="_m2('userAnswers')" value="100"></ion-radio>
+            </ion-item>
+          
+            <ion-item>
+              <ion-label>200</ion-label>
+              <ion-radio (click)="_m2('userAnswers')" value="200"></ion-radio>
+            </ion-item>
+          
+            <ion-item>
+              <ion-label>109</ion-label>
+              <ion-radio (click)="_m2('userAnswers')" value="109" ></ion-radio>
+            </ion-item>
+          </ion-list>
+          
+          <ion-list radio-group [(ngModel)]="m3">
+            <b>3.</b><u>how many corner(s) does triangle has<span></span> </u>?
+          <ion-item>
+            <ion-label>4</ion-label>
+            <ion-radio (click)="_m3('userAnswers')" value="4"></ion-radio>
+          </ion-item>
+          
+          <ion-item>
+            <ion-label>2</ion-label>
+            <ion-radio (click)="_m3('userAnswers')" value="2"></ion-radio>
+          </ion-item>
+          
+          <ion-item>
+            <ion-label>3</ion-label>
+            <ion-radio (click)="_m3('userAnswers')" value="3" ></ion-radio>
+          </ion-item>
+          </ion-list>
+          
+      </ion-list>
+  </div> 
+
+</div>
+
+  <div class="resutls" *ngIf= "display == 1" text-center>
+    <p><u>Your answers are as follows:</u></p>
+  </div>
+  <table>
+    <tr><th>Your Answer</th>
+    </tr>
+
+    <tr>
+      <td>1.{{wc98}}</td><td>
+    </tr>
+    <tr><td>2.{{wc14}}</tr>
+    <tr><td>3.{{wc10}}</tr>
+    <tr><td>4.{{pc1}}</tr>
+    <tr><td>5.{{pc2}}</tr>
+    <tr><td>6.{{pc3}}</tr>
+    <tr><td>7.{{m1}}</tr>
+    <tr><td>8.{{m2}}</tr>
+    <tr><td>9.{{m3}}</tr>
+   
+  </table>
+  <div text-center>
+  <h4>You scored: {{count}} points. </h4>
+    
+  </div>
+    <button ion-button full color="secondary" (click)="StartQ()">START QUIZ</button>
+    <div class="btn">
+        <button ion-button full color="primary" (click)="Display()">Results</button>
+    
+  </div>
+</ion-content>
+
